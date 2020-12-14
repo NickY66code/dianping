@@ -1,10 +1,16 @@
 package com.noah.dianping.service;
 
-/**
- * @Author yanghaiqiang
- * @Date 2020/12/13 22:29
- * @ClassName dianping
- * @Description 用户服务层
- **/
-public class UserService {
+import com.noah.dianping.model.UserModel;
+
+
+public interface UserService {
+
+    /*
+    * @Author yanghaiqiang
+    * @Description 获取用户信息
+    * @Date 23:07 2020/12/14
+    * @Param [id]
+    * @return com.noah.dianping.model.UserModel
+    */
+    UserModel getUser(Integer id);
 }
