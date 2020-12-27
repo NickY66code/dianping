@@ -34,5 +34,5 @@ public interface UserService {
     * @Param [telphone, password]
     * @return com.noah.dianping.model.UserModel
     */
-    UserModel login(String telphone,String password) throws BusinessException;
+    UserModel login(String telphone,String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException;
 }

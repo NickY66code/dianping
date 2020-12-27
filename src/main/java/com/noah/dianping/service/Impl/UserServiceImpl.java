@@ -50,8 +50,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserModel login(String telphone, String password) throws BusinessException {
+    public UserModel login(String telphone, String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
+        password=encodeByMD5(password);
         UserModel userModel=userModelMapper.selectByTelphoneAndPassword(telphone,password);
+
         if(null == userModel){
             throw new BusinessException(EmBusinessError.LOGIN_FALL);
         }

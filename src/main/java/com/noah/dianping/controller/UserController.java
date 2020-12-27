@@ -109,7 +109,7 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public CommonRes login(@Valid @RequestBody LoginReq loginReq,BindingResult bindingResult) throws BusinessException {
+    public CommonRes login(@Valid @RequestBody LoginReq loginReq,BindingResult bindingResult) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
         if(bindingResult.hasErrors()){
             throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, CommonUtil.processErrorString(bindingResult));
         }
