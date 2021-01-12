@@ -35,4 +35,13 @@ public interface UserService {
     * @return com.noah.dianping.model.UserModel
     */
     UserModel login(String telphone,String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException;
+    
+    /*
+    * @Author yanghaiqiang
+    * @Description 计算所有用户数
+    * @Date 15:23 2021/1/12
+    * @Param []
+    * @return java.lang.Integer
+    */
+    Integer countAllUser();
 }

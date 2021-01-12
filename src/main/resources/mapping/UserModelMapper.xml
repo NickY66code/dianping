@@ -160,4 +160,10 @@
       gender = #{gender,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="countAllUser" resultType="java.lang.Integer">
+        select
+        count(1)
+        from
+        user
+    </select>
 </mapper>
