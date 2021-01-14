@@ -24,7 +24,15 @@
 <!--               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">-->
 <!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
 <!--        </table>-->
-        <table tableName="seller"  domainObjectName="SellerModel" enableCountByExample="false" enableDeleteByExample="false"
+<!--        <table tableName="seller"  domainObjectName="SellerModel" enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
+<!--        </table>-->
+<!--        <table tableName="category"  domainObjectName="CategoryModel" enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
+<!--        </table>-->
+        <table tableName="shop"  domainObjectName="ShopModel" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
         </table>

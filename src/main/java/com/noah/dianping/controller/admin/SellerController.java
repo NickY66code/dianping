@@ -67,7 +67,7 @@ public class SellerController {
     public ModelAndView createPage(){
         ModelAndView modelAndView=new ModelAndView("/admin/seller/create.html");
         modelAndView.addObject("CONTROLLER_NAME","seller");
-        modelAndView.addObject("ACTION_NAME","index");
+        modelAndView.addObject("ACTION_NAME","create");
         return modelAndView;
     }
 

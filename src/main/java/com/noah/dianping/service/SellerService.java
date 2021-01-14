@@ -42,4 +42,13 @@ public interface SellerService {
     * @return com.noah.dianping.model.SellerModel 
     */
     SellerModel changeStatus(Integer id,Integer disabledFlag) throws BusinessException;
+
+    /*
+     * @Author yanghaiqiang
+     * @Description 统计数量
+     * @Date 17:55 2021/1/14
+     * @Param []
+     * @return java.lang.Integer
+     */
+    Integer countAllSeller();
 }
