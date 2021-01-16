@@ -17,25 +17,25 @@ import javax.servlet.http.HttpServletResponse;
  **/
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    //处理控制层抛出的异常
-    @ExceptionHandler(Exception.class)
-    @ResponseBody
-    public CommonRes doError(HttpServletRequest servletRequest, HttpServletResponse servletResponse,Exception ex){
-        if(ex instanceof BusinessException){
-            return CommonRes.create(((BusinessException)ex).getCommonError(),"fail");
-        }else if(ex instanceof NoHandlerFoundException){
-            //接口404异常
-            CommonError commonError=new CommonError(EmBusinessError.NO_HANDLER_FOUND);
-            return CommonRes.create(commonError,"fail");
-        }else if(ex instanceof ServletRequestBindingException){
-            //执行参数错误
-            CommonError commonError=new CommonError(EmBusinessError.BIND_EXCEPTION_ERROR);
-            return CommonRes.create(commonError,"fail");
-        }
-        else{
-            CommonError commonError=new CommonError(EmBusinessError.UNKNOWN_ERROR);
-            return CommonRes.create(commonError,"fail");
-        }
-    }
+//
+//    //处理控制层抛出的异常
+//    @ExceptionHandler(Exception.class)
+//    @ResponseBody
+//    public CommonRes doError(HttpServletRequest servletRequest, HttpServletResponse servletResponse,Exception ex){
+//        if(ex instanceof BusinessException){
+//            return CommonRes.create(((BusinessException)ex).getCommonError(),"fail");
+//        }else if(ex instanceof NoHandlerFoundException){
+//            //接口404异常
+//            CommonError commonError=new CommonError(EmBusinessError.NO_HANDLER_FOUND);
+//            return CommonRes.create(commonError,"fail");
+//        }else if(ex instanceof ServletRequestBindingException){
+//            //执行参数错误
+//            CommonError commonError=new CommonError(EmBusinessError.BIND_EXCEPTION_ERROR);
+//            return CommonRes.create(commonError,"fail");
+//        }
+//        else{
+//            CommonError commonError=new CommonError(EmBusinessError.UNKNOWN_ERROR);
+//            return CommonRes.create(commonError,"fail");
+//        }
+//    }
 }

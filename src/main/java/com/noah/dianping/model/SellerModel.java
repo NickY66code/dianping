@@ -29,7 +29,7 @@ public class SellerModel {
      *
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
-    private Date createAt;
+    private Date createdAt;
 
     /**
      *
@@ -38,7 +38,7 @@ public class SellerModel {
      *
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
-    private Date updateAt;
+    private Date updatedAt;
 
     /**
      *
@@ -115,7 +115,7 @@ public class SellerModel {
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
     public Date getCreateAt() {
-        return createAt;
+        return createdAt;
     }
 
     /**
@@ -127,7 +127,7 @@ public class SellerModel {
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
     public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
+        this.createdAt = createAt;
     }
 
     /**
@@ -139,7 +139,7 @@ public class SellerModel {
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
     public Date getUpdateAt() {
-        return updateAt;
+        return updatedAt;
     }
 
     /**
@@ -151,7 +151,7 @@ public class SellerModel {
      * @mbg.generated Tue Jan 12 15:45:10 CST 2021
      */
     public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
+        this.updatedAt = updateAt;
     }
 
     /**

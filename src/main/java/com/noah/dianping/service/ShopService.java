@@ -3,6 +3,7 @@ package com.noah.dianping.service;
 import com.noah.dianping.common.BusinessException;
 import com.noah.dianping.model.ShopModel;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface ShopService {
@@ -42,4 +43,13 @@ public interface ShopService {
     * @return java.lang.Integer
     */
     Integer countAllShop();
+    
+    /*
+    * @Author yanghaiqiang
+    * @Description 相关店铺查询
+    * @Date 23:45 2021/1/16
+    * @Param [longitude, latitude]
+    * @return java.util.List<com.noah.dianping.model.ShopModel> 
+    */
+    List<ShopModel> recommend(BigDecimal longitude,BigDecimal latitude);
 }

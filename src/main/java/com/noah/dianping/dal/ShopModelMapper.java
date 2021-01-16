@@ -1,8 +1,10 @@
 package com.noah.dianping.dal;
 
 import com.noah.dianping.model.ShopModel;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -57,4 +59,7 @@ public interface ShopModelMapper {
     int updateByPrimaryKey(ShopModel record);
 
     Integer countAllShop();
+
+    List<ShopModel> recommend(@Param("longitude") BigDecimal longitude,@Param("latitude") BigDecimal latitude);
+
 }

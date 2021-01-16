@@ -139,11 +139,10 @@ public class UserController {
     * @Param []
     * @return com.noah.dianping.common.CommonRes 
     */
-    @RequestMapping("/getCurrentUser")
+    @RequestMapping("/getcurrentuser")
     @ResponseBody
     public CommonRes getCurrentUser(){
         UserModel userModel=(UserModel) httpServletRequest.getSession().getAttribute(CURRENT_USER_SESSION);
-        
         return CommonRes.create(userModel);
     }
 }
