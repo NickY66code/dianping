@@ -5,6 +5,7 @@ import com.noah.dianping.model.ShopModel;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 public interface ShopService {
 
@@ -46,10 +47,29 @@ public interface ShopService {
     
     /*
     * @Author yanghaiqiang
-    * @Description 相关店铺查询
+    * @Description 默认排序
     * @Date 23:45 2021/1/16
     * @Param [longitude, latitude]
     * @return java.util.List<com.noah.dianping.model.ShopModel> 
     */
     List<ShopModel> recommend(BigDecimal longitude,BigDecimal latitude);
+
+    /*
+    * @Author yanghaiqiang
+    * @Description 搜索
+    * @Date 16:24 2021/1/18
+    * @Param [longitude, latitude, keyword]
+    * @return java.util.List<com.noah.dianping.model.ShopModel>
+    */
+    List<ShopModel> search(BigDecimal longitude,BigDecimal latitude,String keyword,Integer orderby ,Integer categoryId,String tags);
+
+    /*
+    * @Author yanghaiqiang
+    * @Description 查询标签
+    * @Date 17:19 2021/1/18
+    * @Param [keyword, categoryId, tags]
+    * @return java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
+    */
+    List<Map<String,Object>> searchGroupByTags(String keyword,Integer categoryId,String tags);
+
 }
