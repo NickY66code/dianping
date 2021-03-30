@@ -8,6 +8,8 @@ import com.noah.dianping.dal.ShopModelMapper;
 import com.noah.dianping.model.CategoryModel;
 import com.noah.dianping.model.SellerModel;
 import com.noah.dianping.model.ShopModel;
+import com.noah.dianping.recommend.RecomendSortService;
+import com.noah.dianping.recommend.RecommendService;
 import com.noah.dianping.service.CategoryService;
 import com.noah.dianping.service.SellerService;
 import com.noah.dianping.service.ShopService;
@@ -45,6 +47,12 @@ public class ShopServiceImpl implements ShopService {
 
     @Autowired
     private ShopModelMapper shopModelMapper;
+
+    @Autowired
+    private RecommendService recommendService;
+
+    @Autowired
+    private RecomendSortService recomendSortService;
 
     @Autowired
     private CategoryService categoryService;
@@ -109,11 +117,19 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public List<ShopModel> recommend(BigDecimal longitude, BigDecimal latitude) {
-        List<ShopModel> shopModelList = shopModelMapper.recommend(longitude,latitude);
-        shopModelList.forEach(shopModel -> {
-            shopModel.setSellerModel(sellerService.get(shopModel.getSellerId()));
-            shopModel.setCategoryModel(categoryService.get(shopModel.getCategoryId()));
-        });
+        List<Integer> shopIdList= recommendService.recall(148);
+        shopIdList = recomendSortService.sort(shopIdList,148);
+        List<ShopModel> shopModelList = shopIdList.stream().map(id->{
+            ShopModel shopModel= get(id);
+            shopModel.setIconUrl("/static/image/shopcover/xchg.jpg");
+            shopModel.setDistance(100);
+            return shopModel;
+        }).collect(Collectors.toList());
+//        List<ShopModel> shopModelList = shopModelMapper.recommend(longitude,latitude);
+//        shopModelList.forEach(shopModel -> {
+//            shopModel.setSellerModel(sellerService.get(shopModel.getSellerId()));
+//            shopModel.setCategoryModel(categoryService.get(shopModel.getCategoryId()));
+//        });
         return shopModelList;
     }
 

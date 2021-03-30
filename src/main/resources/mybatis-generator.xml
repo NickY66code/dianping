@@ -32,9 +32,13 @@
 <!--               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">-->
 <!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
 <!--        </table>-->
-        <table tableName="shop"  domainObjectName="ShopModel" enableCountByExample="false" enableDeleteByExample="false"
+<!--        <table tableName="shop"  domainObjectName="ShopModel" enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
+<!--        </table>-->
+        <table tableName="recommend"  domainObjectName="RecommendDO" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true" />
+<!--            <generatedKey column="id" sqlStatement="Mysql" identity="true" />-->
         </table>
     </context>
 </generatorConfiguration>
