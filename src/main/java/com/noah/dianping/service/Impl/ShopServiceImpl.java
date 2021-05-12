@@ -121,8 +121,8 @@ public class ShopServiceImpl implements ShopService {
         shopIdList = recomendSortService.sort(shopIdList,148);
         List<ShopModel> shopModelList = shopIdList.stream().map(id->{
             ShopModel shopModel= get(id);
-            shopModel.setIconUrl("/static/image/shopcover/xchg.jpg");
-            shopModel.setDistance(100);
+//            shopModel.setIconUrl("/static/image/shopcover/xchg.jpg");
+            shopModel.setDistance(568);
             return shopModel;
         }).collect(Collectors.toList());
 //        List<ShopModel> shopModelList = shopModelMapper.recommend(longitude,latitude);
