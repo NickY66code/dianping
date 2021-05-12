@@ -29,7 +29,7 @@ public class ControllerAspert {
     private HttpServletResponse httpServletResponse;
 
     //只对controller.admin下的所有类下的打有RequestMapping标签的类生效
-    @          Around("execution(* com.noah.dianping.controller.admin.*.*(..)) && @annotation(org.springframework.web.bind.annotation.RequestMapping)")
+    @Around("execution(* com.noah.dianping.controller.admin.*.*(..)) && @annotation(org.springframework.web.bind.annotation.RequestMapping)")
     public Object adminControllerBeforeValidation(ProceedingJoinPoint joinPoint) throws Throwable {
         Method method=((MethodSignature)joinPoint.getSignature()).getMethod();
         AdminPermission adminPermission=method.getAnnotation(AdminPermission.class);
